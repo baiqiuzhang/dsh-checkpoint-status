@@ -60,5 +60,13 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baiqiuzhang/dsh-checkpoint-status.git"
+  },
+  "homepage": "https://github.com/baiqiuzhang/dsh-checkpoint-status#readme",
+  "bugs": {
+    "url": "https://github.com/baiqiuzhang/dsh-checkpoint-status/issues"
   }
 }
