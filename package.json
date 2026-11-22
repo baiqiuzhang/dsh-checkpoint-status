@@ -1,0 +1,64 @@
+{
+  "name": "dsh-checkpoint-status",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "DeepSeek Harness Web UI plugin: icon-only session states (checkpointed / stale / inherited), a workspace-wide checkpoint inheritance tree with stats and per-session digests. 会话状态图标 + checkpoint 继承树。",
+  "license": "MIT",
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "client-plugin",
+    "web-ui",
+    "sidebar",
+    "session-status",
+    "checkpoint",
+    "继承树",
+    "会话状态"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.0-rc.1 <0.2.0 || >=0.2.0 <0.3.0-0 || >=0.2.2-0 <0.3.0-0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-workspace",
+        "@deepseek-ai/dsh-client-ui-session",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "dshhub": {
+    "schemaVersion": 1,
+    "displayName": "dsh-checkpoint-status",
+    "summary": "侧边栏会话状态改用图标/动画：已出检查点、长期未访问（点击确认归档）、继承自他会话；另有工作区级的 checkpoint 继承树、统计面板与逐会话简介。",
+    "tags": [
+      "sidebar",
+      "session",
+      "checkpoint",
+      "visualization"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
